@@ -9,5 +9,4 @@ public class HibernateDatabaseFoodeaseFoodOrderBookingSystemApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HibernateDatabaseFoodeaseFoodOrderBookingSystemApplication.class, args);
 	}
-
 }
