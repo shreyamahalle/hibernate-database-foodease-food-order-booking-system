@@ -132,6 +132,15 @@ graph LR
 -  Postman Ready: Full suite of sample requests
 
 ---
+##  Hibernate ORM Integration
+
+This project uses **Hibernate** via **Spring Data JPA** for mapping Java objects to relational tables.
+
+###  Benefits of Using Hibernate:
+
+- **Automatic Table Mapping**: Java POJOs to MySQL schema
+- **Lazy/Eager Loading**: Performance-optimized relationships
+- **Caching Support**: Reduces DB load for frequent queries
 
 ## Technology Stack
 
