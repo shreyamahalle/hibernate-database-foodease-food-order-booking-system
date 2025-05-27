@@ -16,7 +16,7 @@
         <property name="hbm2ddl.auto">create-drop</property>
 
 <!--        mapping-->
-        <mapping resource="student.hbm.xml"/>
+        <mapping resource="bookingtable.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

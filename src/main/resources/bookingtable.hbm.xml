@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.shreya.hibernate.model.BookingTable" table="bookingTable">
+        <id name="id" type="long" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="customerName" column="customerName" type="string"/>
+        <property name="restaurantName" column="restaurantName" type="string"/>
+        <property name="bookingTime" column="bookingTime" type="timestamp"/>
+        <property name="numberOfPeople" column="numberOfPeople" type="int"/>
+        <property name="status" column="status" type="string"/>
+    </class>
+</hibernate-mapping>
