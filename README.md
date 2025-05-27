@@ -124,6 +124,14 @@ graph LR
 -  Easy-to-Follow Structure: Well-documented, clean code for learning and demonstration.
 -  Layered Architecture: Clean separation of concerns.
 -  REST API: Full CRUD functionality exposed via REST.
+-  Order Tracking & Delivery Assignment
+-  Hibernate ORM: Efficient database communication using entity mapping
+-  JWT Security & Spring Filters/Interceptors
+-  Scheduled Tasks: Reports, promotions, and order updates
+-  Email Service: Confirmation, status updates, and notifications
+-  Postman Ready: Full suite of sample requests
+
+---
 
 ## Technology Stack
 
