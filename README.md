@@ -132,7 +132,7 @@ graph LR
 -  Postman Ready: Full suite of sample requests
 
 ---
-##  Hibernate ORM Integration
+##  Hibernate ORM Integration(Plain Hibernate - Not JPA)
 
 This project uses **Hibernate** via **Spring Data JPA** for mapping Java objects to relational tables.
 
