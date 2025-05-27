@@ -100,12 +100,12 @@ The Spring Food Order & Booking Management System provides a modular approach to
 It mimics real-world operations like customer registration, restaurant assignment, order placing, and delivery
 tracking — all managed using a clean layered architecture 
 ```bash
-Controller → Service → Repository → Model → DB
+Controller → Service → Repository → Model → Hibernate → MySQL
 
 ```
 ```
 graph LR
-    A[FoodEase] --> B(POS Systems)
+    A[Foodease] --> B(POS Systems)
     A --> C(Payment Gateways)
     A --> D(Logistics Providers)
     A --> E(Marketing Platforms)
