@@ -1,5 +1,3 @@
-# hibernate-database-foodease-food-order-booking-system
-
 [![Twitter](https://img.shields.io/twitter/follow/shreyamahalle?style=social)](https://x.com/shreyamahalle)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub language count](https://img.shields.io/github/languages/count/shreyamahalle/spring-boot-foodease-rest-api-filter-interceptor)
@@ -23,7 +21,7 @@
   </tr>
 </table>
 
-## Foodease - Food Order Booking System
+##  Fibernate Database Foodease Food Order Booking System
 
 ## Table of Contents
 
