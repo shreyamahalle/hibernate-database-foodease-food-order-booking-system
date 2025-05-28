@@ -2,7 +2,6 @@ package com.shreya.hibernate.service.impl;
 
 import com.shreya.hibernate.exception.PaymentAlreadyExistsException;
 import com.shreya.hibernate.exception.PaymentNotFoundException;
-import com.shreya.hibernate.exception.PaymentServiceException;
 import com.shreya.hibernate.model.Payment;
 import com.shreya.hibernate.repository.PaymentRepository;
 import com.shreya.hibernate.service.PaymentService;
@@ -25,66 +24,46 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public boolean addPayment(Payment payment) throws SQLException {
         log.info("Add Payment: {}", payment);
-        try {
-            boolean exists = paymentRepository.findById(payment.getId().intValue()) != null;
-            if (exists) {
-                throw new PaymentAlreadyExistsException("Payment already exists with ID: " + payment.getId());
-            }
-            return paymentRepository.addPayment(payment);
-        } catch (SQLException e) {
-            throw new PaymentServiceException("Failed to add payment: " + e.getMessage());
+        boolean exists = paymentRepository.findById(payment.getId().intValue()) != null;
+        if (exists) {
+            throw new PaymentAlreadyExistsException("Payment already exists with ID: " + payment.getId());
         }
+        return paymentRepository.addPayment(payment);
     }
 
     @Override
     public List<Payment> getAllPayments() throws SQLException {
         log.info("Get All Payments");
-        try {
-            return paymentRepository.findAll();
-        } catch (SQLException e) {
-            throw new PaymentServiceException("Failed to fetch payments: " + e.getMessage());
-        }
+        return paymentRepository.findAll();
     }
 
     @Override
     public Payment getPaymentById(int id) throws SQLException {
         log.info("Get Payment By ID: {}", id);
-        try {
-            Payment payment = paymentRepository.findById(id);
-            if (payment == null) {
-                throw new PaymentNotFoundException("Payment not found with ID: " + id);
-            }
-            return payment;
-        } catch (SQLException e) {
-            throw new PaymentServiceException("Failed to fetch payment: " + e.getMessage());
+        Payment payment = paymentRepository.findById(id);
+        if (payment == null) {
+            throw new PaymentNotFoundException("Payment not found with ID: " + id);
         }
+        return payment;
     }
 
     @Override
     public boolean updatePayment(Payment payment) throws SQLException {
         log.info("Update Payment: {}", payment);
-        try {
-            boolean updated = paymentRepository.update(payment);
-            if (!updated) {
-                throw new PaymentNotFoundException("Cannot update. Payment not found with ID: " + payment.getId());
-            }
-            return true;
-        } catch (SQLException e) {
-            throw new PaymentServiceException("Failed to update payment: " + e.getMessage());
+        boolean updated = paymentRepository.update(payment);
+        if (!updated) {
+            throw new PaymentNotFoundException("Cannot update. Payment not found with ID: " + payment.getId());
         }
+        return true;
     }
 
     @Override
     public boolean deletePayment(int id) throws SQLException {
         log.info("Delete Payment ID: {}", id);
-        try {
-            boolean deleted = paymentRepository.delete(id);
-            if (!deleted) {
-                throw new PaymentNotFoundException("Cannot delete. Payment not found with ID: " + id);
-            }
-            return true;
-        } catch (SQLException e) {
-            throw new PaymentServiceException("Failed to delete payment: " + e.getMessage());
+        boolean deleted = paymentRepository.delete(id);
+        if (!deleted) {
+            throw new PaymentNotFoundException("Cannot delete. Payment not found with ID: " + id);
         }
+        return true;
     }
 }

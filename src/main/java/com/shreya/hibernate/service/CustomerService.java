@@ -5,6 +5,7 @@ import com.shreya.hibernate.model.Customer;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public interface CustomerService {
 
@@ -16,7 +17,7 @@ public interface CustomerService {
 
     List<Customer> retrieveCustomers();
 
-    Customer getCustomerById(int id) throws CustomerNotFoundException;
+    Optional<Customer> getCustomerById(int id) throws CustomerNotFoundException;
 
     boolean updatePartialCustomer(Customer customer) throws SQLException;
 

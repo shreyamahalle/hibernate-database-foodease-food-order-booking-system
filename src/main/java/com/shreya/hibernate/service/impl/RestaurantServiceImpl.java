@@ -1,6 +1,5 @@
 package com.shreya.hibernate.service.impl;
 
-import com.shreya.hibernate.exception.RestaurantAlreadyExistsException;
 import com.shreya.hibernate.exception.RestaurantDeleteException;
 import com.shreya.hibernate.exception.RestaurantNotFoundException;
 import com.shreya.hibernate.exception.RestaurantUpdateException;
@@ -25,11 +24,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
     @Override
     public void insertRestaurant(Restaurant restaurant) throws SQLException {
-        try {
-            restaurantRepository.addRestaurant(restaurant);
-        } catch (SQLException e) {
-            throw new RestaurantAlreadyExistsException("Restaurant already exists or failed to add.");
-        }
+        restaurantRepository.addRestaurant(restaurant);
     }
 
     @Override

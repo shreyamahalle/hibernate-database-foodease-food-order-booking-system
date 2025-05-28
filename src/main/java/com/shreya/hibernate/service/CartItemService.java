@@ -4,6 +4,7 @@ import com.shreya.hibernate.model.CartItem;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public interface CartItemService {
 
@@ -15,7 +16,7 @@ public interface CartItemService {
 
     List<CartItem> retrieveCartItem();
 
-    CartItem getCartItem(int id);
+    Optional<CartItem> getCartItem(int id);
 
     boolean updatePartialCartItem(CartItem cartItem);
 }

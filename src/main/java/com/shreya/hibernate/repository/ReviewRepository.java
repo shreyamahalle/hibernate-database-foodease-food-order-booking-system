@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ReviewRepository {
 
-    void addReview(Review review);
+    boolean addReview(Review review);
 
     List<Review> retrieveReviews();
 

@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -49,10 +50,10 @@ public class CustomerController {
     }
 
     @GetMapping("/customer/{id}")
-    public ResponseEntity<Customer> getCustomerById(@PathVariable int id) {
+    public ResponseEntity<Optional<Customer>> getCustomerById(@PathVariable int id) {
         try {
             log.info("Received request to fetch customer by id: {}", id);
-            Customer customer = customerService.getCustomerById(id);
+            Optional<Customer> customer = customerService.getCustomerById(id);
             return ResponseEntity.ok(customer);
         } catch (CustomerNotFoundException e) {
             log.warn("Customer not found: {}", id);

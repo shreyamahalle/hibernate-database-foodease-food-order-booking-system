@@ -9,5 +9,5 @@ public interface RestaurantRepository {
     List<Restaurant> retrieveRestaurants();
     Restaurant retrieveRestaurant(int id);
     boolean deleteRestaurant(int id);
-    boolean updateRestaurant(Restaurant restaurant);
+    boolean updateRestaurant(int restaurant);
 }

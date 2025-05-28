@@ -23,9 +23,9 @@ public class MenuItemServiceImpl implements MenuItemService {
     private MenuItemRepository menuItemRepository;
 
     @Override
-    public boolean addMenuItem(MenuItem menuItem) throws SQLException {
+    public void addMenuItem(MenuItem menuItem) throws SQLException {
         log.info("Saving menuItem {}", menuItem);
-        return menuItemRepository.addMenuItem(menuItem);
+        menuItemRepository.addMenuItem(menuItem);
     }
 
     @Override
@@ -45,22 +45,20 @@ public class MenuItemServiceImpl implements MenuItemService {
     }
 
     @Override
-    public boolean deleteMenuItem(long id) {
+    public void deleteMenuItem(long id) {
         log.info("Deleting menuItem with id: {}", id);
         boolean deleted = menuItemRepository.deleteMenuItem(id);
         if (!deleted) {
             throw new MenuItemDeletionException("Failed to delete MenuItem with id: " + id);
         }
-        return true;
     }
 
     @Override
-    public boolean updateMenuItem(MenuItem menuItem) {
+    public void updateMenuItem(MenuItem menuItem) {
         log.info("Updating menuItem {}", menuItem);
         boolean updated = menuItemRepository.updateMenuItem(menuItem);
         if (!updated) {
             throw new MenuItemUpdateException("Failed to update MenuItem with id: " + menuItem.getId());
         }
-        return true;
     }
 }

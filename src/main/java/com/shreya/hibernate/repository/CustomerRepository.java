@@ -10,7 +10,7 @@ public interface CustomerRepository{
     void addCustomer(Customer customer);
     List<Customer> retrieveCustomers();
     Optional<Customer> findById(int id);
-    Customer deleteCustomer(int id);
-    Customer updateCustomer(Customer customer);
-    Customer updatePartialCustomer(Customer customer);
+    boolean deleteCustomer(int id);
+    boolean updateCustomer(Customer customer);
+    boolean updatePartialCustomer(Customer customer);
 }

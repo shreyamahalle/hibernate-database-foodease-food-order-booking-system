@@ -17,6 +17,9 @@
 
 <!--        mapping-->
         <mapping resource="bookingtable.hbm.xml"/>
+        <mapping resource="cartItem.hbm.xml"/>
+        <mapping resource="Customer.hbm.xml"/>
+        <mapping resource="Coupon.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -73,18 +74,20 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public Customer getCustomerById(int id) {
+    public Optional<Customer> getCustomerById(int id) {
+        Optional<Customer> result;
         log.info("Fetching customer by ID: {}", id);
         try {
-            Customer customer = customerRepository.findById(id);
+            Optional<Customer> customer = customerRepository.findById(id);
             if (customer == null) {
                 throw new CustomerNotFoundException("Customer not found with ID: " + id);
             }
-            return customer;
+            result = customer;
         } catch (Exception e) {
             log.error("Error fetching customer with ID {}", id, e);
             throw new CustomerServiceException("Failed to fetch customer", e);
         }
+        return result;
     }
 
     @Override

@@ -24,33 +24,23 @@ public class OrderStatusServiceImpl implements OrderStatusService {
     @Override
     public boolean addOrderStatus(OrderStatus orderStatus) {
         log.info("Adding Order Status: {}", orderStatus);
-        return orderStatusRepository.addorderStatus(orderStatus);
+        return orderStatusRepository.addOrderStatus(orderStatus);
     }
 
     @Override
     public List<OrderStatus> getAllOrderStatus() {
-        try {
-            log.info("Fetching all Order Statuses");
-            return orderStatusRepository.retrieveOrderStatuses();
-        } catch (SQLException e) {
-            log.error("Error while fetching order statuses", e);
-            throw new DatabaseException("Failed to fetch order statuses");
-        }
+        log.info("Fetching all Order Statuses");
+        return orderStatusRepository.retrieveOrderStatuses();
     }
 
     @Override
     public OrderStatus getOrderStatusById(Long id) {
-        try {
-            log.info("Fetching Order Status by ID: {}", id);
-            OrderStatus status = orderStatusRepository.retrieveOrderStatus(id);
-            if (status == null) {
-                throw new OrderStatusNotFoundException("OrderStatus with ID " + id + " not found");
-            }
-            return status;
-        } catch (SQLException e) {
-            log.error("Error while fetching order status by ID", e);
-            throw new DatabaseException("Failed to fetch order status");
+        log.info("Fetching Order Status by ID: {}", id);
+        OrderStatus status = orderStatusRepository.retrieveOrderStatus(id);
+        if (status == null) {
+            throw new OrderStatusNotFoundException("OrderStatus with ID " + id + " not found");
         }
+        return status;
     }
 
     @Override

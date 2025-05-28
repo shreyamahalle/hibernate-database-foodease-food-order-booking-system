@@ -14,8 +14,9 @@ import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
-@Service
+@Service//("cartItemServiceImpl")
 @AllArgsConstructor
 public class CartItemServiceImpl implements CartItemService {
 
@@ -69,9 +70,9 @@ public class CartItemServiceImpl implements CartItemService {
     }
 
     @Override
-    public CartItem getCartItem(int id) {
+    public Optional<CartItem> getCartItem(int id) {
         log.info("Fetching cart item with ID: {}", id);
-        CartItem item = cartItemRepository.findById(id);
+        Optional<CartItem> item = cartItemRepository.findById(id);
         if (item == null) {
             log.error("CartItem not found for ID: {}", id);
             throw new CartItemNotFoundException("CartItem not found for ID: " + id);

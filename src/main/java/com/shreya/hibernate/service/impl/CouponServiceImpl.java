@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CouponServiceImpl implements CouponService {
@@ -30,7 +31,7 @@ public class CouponServiceImpl implements CouponService {
         if (exists) {
             throw new CouponAlreadyExistsException("Coupon already exists with code: " + coupon.getCode());
         }
-        return couponRepository.saveCoupon(coupon);
+        return couponRepository.saveCoupon(coupon).isActive();
     }
 
     @Override
@@ -42,17 +43,17 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public Coupon getCouponById(Long id) {
         log.info("Fetching coupon by id: {}", id);
-        Coupon coupon = couponRepository.getCouponById(id);
+        Optional<Coupon> coupon = couponRepository.findById(id);
         if (coupon == null) {
             throw new CouponNotFoundException("Coupon not found with id: " + id);
         }
-        return coupon;
+        return null;
     }
 
     @Override
     public boolean deleteCoupon(Long id) {
         log.info("Deleting coupon with id: {}", id);
-        boolean deleted = couponRepository.deleteCoupon(id);
+        boolean deleted = couponRepository.deleteCoupon(id).isActive();
         if (!deleted) {
             throw new CouponNotFoundException("Coupon not found with id: " + id);
         }
@@ -62,7 +63,7 @@ public class CouponServiceImpl implements CouponService {
     @Override
     public boolean updateCoupon(Coupon coupon) {
         log.info("Updating coupon: {}", coupon);
-        boolean updated = couponRepository.updateCoupon(coupon);
+        boolean updated = couponRepository.updateCoupon(coupon).isActive();
         if (!updated) {
             throw new CouponNotFoundException("Coupon not found with id: " + coupon.getId());
         }

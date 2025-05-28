@@ -2,17 +2,17 @@ package com.shreya.hibernate.repository.impl;
 
 import com.shreya.hibernate.config.HibernateConfig;
 import com.shreya.hibernate.model.CartItem;
-import com.shreya.hibernate.service.CartItemService;
+import com.shreya.hibernate.repository.CartItemRepository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
-import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 @Repository("cartItemRepository")
-public class CartItemRepositoryImpl implements CartItemService {
+public class CartItemRepositoryImpl implements CartItemRepository {
 
     private final SessionFactory sessionFactory;
 
@@ -21,7 +21,7 @@ public class CartItemRepositoryImpl implements CartItemService {
     }
 
     @Override
-    public boolean addCartItem(CartItem cartItem) throws SQLException {
+    public boolean addCartItem(CartItem cartItem) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         session.save(cartItem);
@@ -31,12 +31,29 @@ public class CartItemRepositoryImpl implements CartItemService {
     }
 
     @Override
+    public List<CartItem> retrieveCartItems() {
+        Session session = sessionFactory.openSession();
+        Query<CartItem> query = session.createQuery("from CartItem", CartItem.class);
+        List<CartItem> cartItems = query.list();
+        session.close();
+        return cartItems;
+    }
+
+    @Override
+    public Optional<CartItem> findById(int id) {
+        Session session = sessionFactory.openSession();
+        CartItem cartItem = session.get(CartItem.class, id);
+        session.close();
+        return Optional.ofNullable(cartItem);
+    }
+
+    @Override
     public boolean deleteCartItem(int id) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        CartItem item = session.get(CartItem.class, id);
-        if (item != null) {
-            session.delete(item);
+        CartItem cartItem = session.load(CartItem.class, id);
+        if (cartItem != null) {
+            session.delete(cartItem);
             session.getTransaction().commit();
             session.close();
             return true;
@@ -47,7 +64,7 @@ public class CartItemRepositoryImpl implements CartItemService {
     }
 
     @Override
-    public boolean updateCartItem(CartItem cartItem) throws SQLException {
+    public boolean updateCartItem(CartItem cartItem) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         CartItem existing = session.get(CartItem.class, cartItem.getId());
@@ -63,35 +80,15 @@ public class CartItemRepositoryImpl implements CartItemService {
     }
 
     @Override
-    public List<CartItem> retrieveCartItem() {
-        Session session = sessionFactory.openSession();
-        Query<CartItem> query = session.createQuery("from CartItem", CartItem.class);
-        List<CartItem> list = query.list();
-        session.close();
-        return list;
-    }
-
-    @Override
-    public CartItem getCartItem(int id) {
-        Session session = sessionFactory.openSession();
-        CartItem item = session.get(CartItem.class, id);
-        session.close();
-        return item;
-    }
-
-    @Override
     public boolean updatePartialCartItem(CartItem cartItem) {
+
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         CartItem existing = session.get(CartItem.class, cartItem.getId());
         if (existing != null) {
-            if (cartItem.getQuantity() != null) {
-                existing.setQuantity(cartItem.getQuantity());
-            }
-            if (cartItem.getMenu_item_id() != null) {
-                existing.setMenu_item_id(cartItem.getMenu_item_id());
-            }
-            session.update(existing);
+            // Example partial update: update quantity only (change as needed)
+            existing.setQuantity(cartItem.getQuantity());
+            session.merge(existing);
             session.getTransaction().commit();
             session.close();
             return true;

@@ -7,15 +7,15 @@ import java.util.Optional;
 
 public interface CartItemRepository {
 
-    CartItem addCartItem(CartItem cartItem);
+    boolean addCartItem(CartItem cartItem);
 
     List<CartItem> retrieveCartItems();
 
     Optional<CartItem> findById(int id);
 
-    CartItem deleteCartItem(int id);
+    boolean deleteCartItem(int id);
 
-    CartItem updateCartItem(CartItem cartItem);
+    boolean updateCartItem(CartItem cartItem);
 
-    CartItem updatePartialCartItem(CartItem cartItem);
+    boolean updatePartialCartItem(CartItem cartItem);
 }
