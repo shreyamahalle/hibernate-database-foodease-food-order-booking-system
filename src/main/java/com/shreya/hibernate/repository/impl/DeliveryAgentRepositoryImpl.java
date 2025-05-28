@@ -1,4 +1,4 @@
 package com.shreya.hibernate.repository.impl;
 
-public class DeliveryAgentRepositoryImpl {
+public interface DeliveryAgentRepositoryImpl {
 }

@@ -1,4 +1,4 @@
 package com.shreya.hibernate.repository.impl;
 
-public class OrderRepositoryImpl {
+public interface OrderRepositoryImpl {
 }

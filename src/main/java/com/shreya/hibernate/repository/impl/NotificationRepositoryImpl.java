@@ -1,4 +1,4 @@
 package com.shreya.hibernate.repository.impl;
 
-public class NotificationRepositoryImpl {
+public interface NotificationRepositoryImpl {
 }
