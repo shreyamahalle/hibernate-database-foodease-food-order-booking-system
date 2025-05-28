@@ -1,18 +1,17 @@
 package com.shreya.hibernate.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
+@Setter
 public class Notification {
     private Long id;
     private Long customer_id;
     private String message;
-    private boolean is_read;
+    private boolean read;
     private String timestamp;
 }

@@ -5,12 +5,12 @@
 
 <hibernate-mapping>
     <class name="com.shreya.hibernate.model.DeliveryAgent" table="cart_item">
-        <id name="id" type="long" column="id">
+        <id name="id" type="int" column="id">
             <generator class="native"/>
         </id>
 
-        <property name="customer_id" column="customer_id" type="long"/>
-        <property name="menu_item_id" column="menu_item_id" type="long"/>
-        <property name="quantity" column="quantity" type="int"/>
+        <property name="mobileNo" column="mobileNo" type="int"/>
+        <property name="name" column="name" type="string"/>
+        <property name="city" column="city" type="string"/>
     </class>
 </hibernate-mapping>

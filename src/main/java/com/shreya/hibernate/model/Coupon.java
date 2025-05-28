@@ -15,4 +15,5 @@ public class Coupon {
     private String description;
     private Double discountAmount;
     private boolean active;
+
 }

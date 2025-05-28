@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.shreya.hibernate.model.MenuItem" table="menu_item">
+        <id name="id" type="long" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="name" column="name" type="string"/>
+        <property name="description" column="description" type="string"/>
+        <property name="price" column="price" type="double"/>
+        <property name="restaurantId" column="restaurant_id" type="long"/>
+    </class>
+</hibernate-mapping>

@@ -1,15 +1,13 @@
 package com.shreya.hibernate.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-
+@Getter
+@Setter
 public class DeliveryAgent {
     public int mobileNo;
     private int id;

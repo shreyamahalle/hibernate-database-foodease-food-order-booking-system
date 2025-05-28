@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.shreya.hibernate.model.Notification" table="notification">
+        <id name="id" column="id" type="long">
+            <generator class="native"/>
+        </id>
+
+        <property name="customer_id" column="customer_id" type="long"/>
+        <property name="message" column="message" type="string"/>
+        <property name="read" column="read" type="boolean"/>
+        <property name="timestamp" column="timestamp" type="string"/>
+    </class>
+</hibernate-mapping>

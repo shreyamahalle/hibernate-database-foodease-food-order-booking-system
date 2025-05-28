@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.shreya.hibernate.model.Feedback" table="feedback">
+        <id name="id" column="id" type="long">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="customer" class="com.shreya.hibernate.model.Customer" column="customer_id" cascade="all"/>
+        <many-to-one name="order" class="com.shreya.hibernate.model.Order" column="order_id" cascade="all"/>
+
+        <property name="rating" column="rating" type="int"/>
+        <property name="comment" column="comment" type="string"/>
+        <property name="feedbackDate" column="feedback_date" type="string"/>
+    </class>
+</hibernate-mapping>

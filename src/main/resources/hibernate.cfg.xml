@@ -16,10 +16,20 @@
         <property name="hbm2ddl.auto">create-drop</property>
 
 <!--        mapping-->
-        <mapping resource="bookingtable.hbm.xml"/>
+        <mapping resource="bookingTable.hbm.xml"/>
         <mapping resource="cartItem.hbm.xml"/>
-        <mapping resource="Customer.hbm.xml"/>
-        <mapping resource="Coupon.hbm.xml"/>
+        <mapping resource="customer.hbm.xml"/>
+        <mapping resource="coupon.hbm.xml"/>
+        <mapping resource="deliveryAgent.hbm.xml"/>
+        <mapping resource="restaurant.hbm.xml"/>
+        <mapping resource="orderStatus.hbm.xml"/>
+        <mapping resource="notification.hbm.xml"/>
+        <mapping resource="order.hbm.xml"/>
+        <mapping resource="menuItem.hbm.xml"/>
+        <mapping resource="feedback.hbm.xml"/>
+        <mapping resource="review.hbm.xml"/>
+        <mapping resource="payment.hbm.xml"/>
+
 
     </session-factory>
 </hibernate-configuration>

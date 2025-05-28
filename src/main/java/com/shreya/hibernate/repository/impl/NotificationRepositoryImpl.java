@@ -55,7 +55,7 @@ public class NotificationRepositoryImpl implements NotificationRepository {
         session.beginTransaction();
         Notification notification = session.get(Notification.class, id);
         if (notification != null) {
-            notification.set_read(true); // assumes there's a 'read' field
+            notification.setRead(true); // assumes there's a 'read' field
             session.update(notification);
             session.getTransaction().commit();
             session.close();

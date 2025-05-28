@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.shreya.hibernate.model.Review" table="review">
+
+        <id name="id" type="long" column="id">
+            <generator class="native"/>
+        </id>
+
+        <property name="rating" column="rating" type="int"/>
+        <property name="comment" column="comment" type="string"/>
+        <property name="reviewDate" column="review_date" type="date"/>
+
+        <many-to-one name="restaurant" class="com.shreya.hibernate.model.Restaurant" column="restaurant_id" fetch="select" not-null="true"/>
+        <many-to-one name="customer" class="com.shreya.hibernate.model.Customer" column="customer_id" fetch="select" not-null="true"/>
+
+    </class>
+</hibernate-mapping>

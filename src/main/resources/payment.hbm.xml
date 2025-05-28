@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.shreya.hibernate.model.Payment" table="payment">
+
+        <id name="id" column="id" type="long">
+            <generator class="native"/>
+        </id>
+
+        <!-- Reference to Order entity (Assuming mapping done separately for Order) -->
+        <many-to-one name="order" class="com.shreya.hibernate.model.Order" column="order_id" cascade="all"/>
+
+        <property name="amount" column="amount" type="double"/>
+        <property name="paymentMethod" column="payment_method" type="string"/>
+        <property name="paymentStatus" column="payment_status" type="string"/>
+        <property name="transactionId" column="transaction_id" type="string"/>
+
+    </class>
+</hibernate-mapping>
