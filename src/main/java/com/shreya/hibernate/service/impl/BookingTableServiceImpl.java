@@ -20,7 +20,7 @@ public class BookingTableServiceImpl implements BookingTableService {
     private final BookingTableRepository bookingTableRepository;
 
     @Override
-    public boolean addBooking(BookingTable bookingTable) {
+    public void addBooking(BookingTable bookingTable) {
         log.info("Adding booking: {}", bookingTable);
         boolean added = bookingTableRepository.addBooking(bookingTable);
         if (!added) {
@@ -28,7 +28,6 @@ public class BookingTableServiceImpl implements BookingTableService {
             throw new BookingAddFailedException("Failed to add booking.");
         }
         log.info("Booking added successfully.");
-        return true;
     }
 
     @Override

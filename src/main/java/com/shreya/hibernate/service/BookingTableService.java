@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BookingTableService {
 
-    boolean addBooking(BookingTable bookingTable) throws SQLException;
+    void addBooking(BookingTable bookingTable) throws SQLException;
 
     List<BookingTable> getAllBookings();
 
