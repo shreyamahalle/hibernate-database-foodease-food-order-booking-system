@@ -26,7 +26,6 @@ public class BookingTableRepositoryImpl implements BookingTableRepository {
                 session.save(bookingTable);
                 session.getTransaction().commit();
                 session.close();
-
                 return false;
         }
 
