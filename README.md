@@ -45,6 +45,7 @@
 - [Future Scope](#Future-Scope)
 - [License](#license)
 - [Author](#Author)
+  
 
 # **Hibernate Database Foodease Food Order Booking System**
 
@@ -478,16 +479,24 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 src/
 └── main/
     ├── java/
-    │   └── com.booking
-    │       ├── config/             # App configuration
-    │       ├── controller/         # REST controllers
-    │       ├── model/              # Entity classes
-    │       ├── repository/         # Data access interfaces
-    │       ├── service/            # Business logic
-    │       └── BookingApplication  # Main class
+    │   └── com/
+    │       └── booking/
+    │           ├── config/             # Hibernate Configuration
+    │           │   └── HibernateUtil.java
+    │           ├── controller/         # BookingController (for testing)
+    │           │   └── BookingController.java
+    │           ├── model/              # Entity classes
+    │           │   └── Booking.java
+    │           ├── repository/         # DAO interfaces & implementations
+    │           │   ├── BookingDao.java
+    │           │   └── BookingDaoImpl.java
+    │           ├── service/            # Service layer
+    │           │   ├── BookingService.java
+    │           │   └── BookingServiceImpl.java
+    │           └── BookingApplication.java   # Main class
     └── resources/
-        ├── application.properties
-        └── static/templates
+        ├── application.properties      # DB configuration
+        └── hibernate.cfg.xml           # Hibernate config XML
 
 ```
 
