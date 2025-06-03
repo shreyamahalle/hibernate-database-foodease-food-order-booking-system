@@ -15,7 +15,7 @@
         <property name="format_sql">true</property>
         <property name="hbm2ddl.auto">create-drop</property>
 
-<!--        mapping-->
+        <!--        mapping-->
         <mapping resource="bookingTable.hbm.xml"/>
         <mapping resource="cartItem.hbm.xml"/>
         <mapping resource="customer.hbm.xml"/>

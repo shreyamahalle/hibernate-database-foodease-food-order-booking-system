@@ -1,4 +1,5 @@
 package com.shreya.hibernate.service.impl;
+
 import com.shreya.hibernate.exception.BookingAddFailedException;
 import com.shreya.hibernate.exception.IdNotFoundException;
 import com.shreya.hibernate.exception.NoBookingTablesFoundException;

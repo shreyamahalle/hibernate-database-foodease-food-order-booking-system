@@ -1,6 +1,5 @@
 package com.shreya.hibernate.service.impl;
 
-import com.shreya.hibernate.exception.DatabaseException;
 import com.shreya.hibernate.exception.OrderStatusNotFoundException;
 import com.shreya.hibernate.model.OrderStatus;
 import com.shreya.hibernate.repository.OrderStatusRepository;
@@ -10,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLException;
 import java.util.List;
 
 @Service

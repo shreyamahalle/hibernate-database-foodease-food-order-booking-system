@@ -7,8 +7,10 @@
 ![GitHub followers](https://img.shields.io/github/followers/shreyamahalle?style=social)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.4.6-brightgreen.svg)
 [![Developed with IntelliJ IDEA](https://img.shields.io/badge/IntelliJ%20IDEA-Supported-blue.svg)](https://www.jetbrains.com/idea/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle) &nbsp;&nbsp;
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/shreyamahalle) &nbsp;&nbsp;
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/shreyamahalle)
+&nbsp;&nbsp;
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/shreyamahalle)
+&nbsp;&nbsp;
 
 <table align="center">
   <tr>
@@ -21,7 +23,7 @@
   </tr>
 </table>
 
-##  Hibernate Database Foodease Food Order Booking System
+## Hibernate Database Foodease Food Order Booking System
 
 ## Table of Contents
 
@@ -45,17 +47,20 @@
 - [Future Scope](#Future-Scope)
 - [License](#license)
 - [Author](#Author)
-  
 
 # **Hibernate Database Foodease Food Order Booking System**
 
-**Foodease** is a Java Hibernate Database Foodease Food Order Booking System. It allows customers to register, browse restaurants, place orders, and receive deliveries from nearby agents. The system is modular, scalable, and designed for real-world business needs.
+**Foodease** is a Java Hibernate Database Foodease Food Order Booking System. It allows customers to register, browse
+restaurants, place orders, and receive deliveries from nearby agents. The system is modular, scalable, and designed for
+real-world business needs.
 
-> **Use case**: A food ordering platform where customers can register, explore nearby restaurants, place orders, and get deliveries from available agents based on location and serviceability.
+> **Use case**: A food ordering platform where customers can register, explore nearby restaurants, place orders, and get
+> deliveries from available agents based on location and serviceability.
 
 ## Advanced Features
 
 ### Filters & Interceptors
+
 1. **Request Logging Filter**: Logs all incoming requests
 2. **Authentication Filter**: JWT validation for secure endpoints
 3. **Response Time Interceptor**: Measures API response times
@@ -79,7 +84,8 @@
 ## Project Overview
 
 The Spring Food Order & Booking Management System provides a modular approach to managing:
-**FoodEase** is a comprehensive Spring Boot-based solution that digitalizes end-to-end food ordering operations, serving three key stakeholders:
+**FoodEase** is a comprehensive Spring Boot-based solution that digitalizes end-to-end food ordering operations, serving
+three key stakeholders:
 
 - Customers
 - Restaurants
@@ -99,11 +105,13 @@ The Spring Food Order & Booking Management System provides a modular approach to
 - **Email Notifications**
 
 It mimics real-world operations like customer registration, restaurant assignment, order placing, and delivery
-tracking — all managed using a clean layered architecture 
+tracking — all managed using a clean layered architecture
+
 ```bash
 Controller → Service → Repository → Model → Hibernate → MySQL
 
 ```
+
 ```
 graph LR
     A[Foodease] --> B(POS Systems)
@@ -117,27 +125,28 @@ graph LR
 
 ## Key Features
 
--  Customer and Restaurant Booking Management: Effortlessly handle customer bookings and restaurant data.
--  Delivery Agent Simulation: Assign delivery agents based on location and availability.
--  Dynamic Order Handling: Add, track, and manage orders through their entire lifecycle.
--  Seamless Java Integration: Clean integration of Java models for each entity (Customer, Delivery Agent, Order,
-   Restaurant).
--  Easy-to-Follow Structure: Well-documented, clean code for learning and demonstration.
--  Layered Architecture: Clean separation of concerns.
--  REST API: Full CRUD functionality exposed via REST.
--  Order Tracking & Delivery Assignment
--  Hibernate ORM: Efficient database communication using entity mapping
--  JWT Security & Spring Filters/Interceptors
--  Scheduled Tasks: Reports, promotions, and order updates
--  Email Service: Confirmation, status updates, and notifications
--  Postman Ready: Full suite of sample requests
+- Customer and Restaurant Booking Management: Effortlessly handle customer bookings and restaurant data.
+- Delivery Agent Simulation: Assign delivery agents based on location and availability.
+- Dynamic Order Handling: Add, track, and manage orders through their entire lifecycle.
+- Seamless Java Integration: Clean integration of Java models for each entity (Customer, Delivery Agent, Order,
+  Restaurant).
+- Easy-to-Follow Structure: Well-documented, clean code for learning and demonstration.
+- Layered Architecture: Clean separation of concerns.
+- REST API: Full CRUD functionality exposed via REST.
+- Order Tracking & Delivery Assignment
+- Hibernate ORM: Efficient database communication using entity mapping
+- JWT Security & Spring Filters/Interceptors
+- Scheduled Tasks: Reports, promotions, and order updates
+- Email Service: Confirmation, status updates, and notifications
+- Postman Ready: Full suite of sample requests
 
 ---
-##  Hibernate ORM Integration(Plain Hibernate - Not JPA)
+
+## Hibernate ORM Integration(Plain Hibernate - Not JPA)
 
 This project uses **Hibernate** via **Spring Data JPA** for mapping Java objects to relational tables.
 
-###  Benefits of Using Hibernate:
+### Benefits of Using Hibernate:
 
 - **Automatic Table Mapping**: Java POJOs to MySQL schema
 - **Lazy/Eager Loading**: Performance-optimized relationships
@@ -147,21 +156,21 @@ This project uses **Hibernate** via **Spring Data JPA** for mapping Java objects
 
 This project is built with the following technologies:
 
+| Technology      | Purpose                      |
+|-----------------|------------------------------|
+| Java 21         | Core language                |
+| Spring Boot     | Application framework        |
+| Spring Web      | RESTful APIs                 |
+| Spring Data JPA | Database operations          |
+| Hibernate       | ORM mapping                  |
+| JSP/Servlets    | Web interface                |
+| MySQL           | Relational database          |
+| Maven           | Project management and build |
+| Lombok          | Boilerplate reduction        |
+| HTML5/CSS3      | Frontend structure           |
+| Git             | Version control              |
+| Postman         | API Testing                  |
 
-| Technology        | Purpose                                   |
-|------------------|-------------------------------------------|
-| Java 21           | Core language                            |
-| Spring Boot       | Application framework                    |
-| Spring Web        | RESTful APIs                             |
-| Spring Data JPA   | Database operations                      |
-| Hibernate         | ORM mapping                              |
-| JSP/Servlets      | Web interface                            |
-| MySQL             | Relational database                      |
-| Maven             | Project management and build             |
-| Lombok            | Boilerplate reduction                    |
-| HTML5/CSS3        | Frontend structure                       |
-| Git               | Version control                          |
-| Postman           | API Testing                              |
 ---
 
 ## Getting Started
@@ -184,23 +193,26 @@ Before you begin, ensure you have the following:
 Before deploying FoodEase, ensure your development environment meets these requirements:
 
 ### Core Requirements
-| Component           | Version       | Installation Guide                      | Verification Command          |
-|---------------------|---------------|-----------------------------------------|-------------------------------|
-| Java JDK            | 21+           | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/install/) | `java -version` |
-| Apache Maven        | 3.9.x         | [Maven Install Guide](https://maven.apache.org/install.html) | `mvn -v` |
-| MySQL Server        | 8.0+          | [MySQL Downloads](https://dev.mysql.com/downloads/) | `mysql --version` |
-| Docker Engine       | 24.0+         | [Docker Installation](https://docs.docker.com/engine/install/) | `docker --version` |
+
+| Component     | Version | Installation Guide                                                                                           | Verification Command |
+|---------------|---------|--------------------------------------------------------------------------------------------------------------|----------------------|
+| Java JDK      | 21+     | [Oracle JDK](https://www.oracle.com/java/technologies/downloads/) or [OpenJDK](https://openjdk.org/install/) | `java -version`      |
+| Apache Maven  | 3.9.x   | [Maven Install Guide](https://maven.apache.org/install.html)                                                 | `mvn -v`             |
+| MySQL Server  | 8.0+    | [MySQL Downloads](https://dev.mysql.com/downloads/)                                                          | `mysql --version`    |
+| Docker Engine | 24.0+   | [Docker Installation](https://docs.docker.com/engine/install/)                                               | `docker --version`   |
 
 ### Optional Tools
-| Tool                | Recommended For                      | Installation Link                      |
-|---------------------|--------------------------------------|----------------------------------------|
-| IntelliJ IDEA       | Advanced Development                | [Download IDEA](https://www.jetbrains.com/idea/download/) |
-| Postman            | API Testing                         | [Get Postman](https://www.postman.com/downloads/) |
-| Kubernetes CLI     | Production Deployment               | [Install kubectl](https://kubernetes.io/docs/tasks/tools/) |
+
+| Tool           | Recommended For       | Installation Link                                          |
+|----------------|-----------------------|------------------------------------------------------------|
+| IntelliJ IDEA  | Advanced Development  | [Download IDEA](https://www.jetbrains.com/idea/download/)  |
+| Postman        | API Testing           | [Get Postman](https://www.postman.com/downloads/)          |
+| Kubernetes CLI | Production Deployment | [Install kubectl](https://kubernetes.io/docs/tasks/tools/) |
 
 ### Environment Verification
 
 # Verify Java installation
+
 ```bash
 java -version
 Should show: java version "21.x.x"
@@ -252,7 +264,9 @@ Steps to Get Started
 ```
 
 ## 5. **MySQL Database Setup**
+
 - To set up the database and create the necessary tables, run the following SQL queries:
+
 ```bash
     Insert sample data into the Customer table
     INSERT INTO Customer (name, username, mobileNo, city, area)
@@ -262,6 +276,7 @@ Steps to Get Started
 ```
 
 ## 6. **Configure Your MySQL Connection:**
+
 ```
 - In your project configuration (application.properties), set the MySQL database connection details.
 - Example application.properties:
@@ -270,6 +285,7 @@ Steps to Get Started
 - spring.datasource.password=your_password
 - spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
+
 ## 7. **Compile and Run the Application:**
 
 - Locate Main.java in your IDE.
@@ -280,16 +296,20 @@ Steps to Get Started
 ```bash
    mvn clean install
  ```
+
 ## API Endpoints (CRUD)
 
 ## API Endpoints (CURL Commands)
 
 ## Get All Customers
+
 ```bash
    curl --location 'http://localhost:8080/api/customerManagement/customer' \
    --header 'Content-Type: application/json'
 ```
+
 ## Get Customer by ID
+
 ```bash
    curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
    --header 'Content-Type: application/json'
@@ -297,13 +317,16 @@ Steps to Get Started
       curl location 'http://localhost:8080/api/customerManagement/customer' \
       header 'Content-Type: application/json'
 ```
+
 ## Get Customer by ID
+
 ```bash
      curl --location 'http://localhost:8080/api/customerManagement/customer/6' \
      header 'Content-Type: application/json'
 ```
 
 ## Update Customer
+
 ```bash
 curl -X PUT 'http://localhost:8080/api/customer/6' \
 -H 'Content-Type: application/json' \
@@ -313,7 +336,9 @@ curl -X PUT 'http://localhost:8080/api/customer/6' \
   "area": "Bandra"
 }'
 ```
+
 ## Delete Customer
+
 ```bash
 curl --location --request DELETE 'http://localhost:8080/customers' \
 --header 'Content-Type: application/json' \
@@ -326,8 +351,11 @@ curl --location --request DELETE 'http://localhost:8080/customers' \
 }
 '
 ```
+
 ## Restaurant Management
+
 ## Create Restaurant
+
 ```bash
 curl -X POST 'http://localhost:8080/api/restaurant' \
 -H 'Content-Type: application/json' \
@@ -338,13 +366,18 @@ curl -X POST 'http://localhost:8080/api/restaurant' \
   "cuisineType": "Italian"
 }'
 ```
+
 ## Get Restaurant Menu
+
 ```bash
 curl -X GET 'http://localhost:8080/api/restaurant/1/menu' \
 -H 'Accept: application/json'
 ```
+
 ## Order Management
+
 ## Place Order
+
 ```bash
 curl -X POST 'http://localhost:8080/api/order' \
 -H 'Content-Type: application/json' \
@@ -362,6 +395,7 @@ curl -X POST 'http://localhost:8080/api/order' \
   "couponCode": "SAVE10"
 }' 
 ```
+
 ## Postman Collection
 
 You can test the REST APIs using Postman:
@@ -379,7 +413,9 @@ You can test the REST APIs using Postman:
   "area": "Andheri"
 }
 ``` 
+
 ## POST /api/restaurants
+
 ```json
 {
   "name": "Pizza Palace",
@@ -387,7 +423,9 @@ You can test the REST APIs using Postman:
   "area": "Bandra"
 }
 ```
+
 POST /api/orders
+
 ```json
 {
   "customerId": 1,
@@ -397,6 +435,7 @@ POST /api/orders
 ```
 
 ## Module Responsibilities
+
 ```properties
 This project includes full CRUD and business logic support for the following modules:
 
@@ -428,6 +467,7 @@ This project includes full CRUD and business logic support for the following mod
 
 
 ```
+
 ## Spring Annotations
 
 - Overview of Spring Annotations
@@ -457,7 +497,6 @@ This project includes full CRUD and business logic support for the following mod
    setter methods.
 7. @Bean
    Description: Used to define a bean within a @Configuration annotated class. It's a method-level annotation.
-
 
 ## Contact
 
@@ -516,25 +555,24 @@ src/
 12. **Notification**
 13. **Coupon**
 
-
 ## System Functionality
 
 ### Core Modules
 
-| Module               | Key Features                                                                 | Technical Implementation                          |
-|----------------------|-----------------------------------------------------------------------------|---------------------------------------------------|
-| **Customer**         | - JWT Authentication<br>- Profile Management<br>- Order History            | Spring Security, OAuth2, Redis Cache              |
-| **DeliveryAgent**    | - Real-time Tracking<br>- Capacity Management<br>- Route Optimization      | WebSocket, Google Maps API, Kafka Events          |
-| **Order**           | - State Machine Workflow<br>- Payment Integration<br>- SAGA Pattern        | Spring State Machine, Stripe API, Axon Framework  |
-| **Restaurant**      | - Menu Management<br>- Inventory Control<br>- Service Area Configuration   | Spring Data JPA, Geospatial Queries               |
+| Module            | Key Features                                                             | Technical Implementation                         |
+|-------------------|--------------------------------------------------------------------------|--------------------------------------------------|
+| **Customer**      | - JWT Authentication<br>- Profile Management<br>- Order History          | Spring Security, OAuth2, Redis Cache             |
+| **DeliveryAgent** | - Real-time Tracking<br>- Capacity Management<br>- Route Optimization    | WebSocket, Google Maps API, Kafka Events         |
+| **Order**         | - State Machine Workflow<br>- Payment Integration<br>- SAGA Pattern      | Spring State Machine, Stripe API, Axon Framework |
+| **Restaurant**    | - Menu Management<br>- Inventory Control<br>- Service Area Configuration | Spring Data JPA, Geospatial Queries              |
 
 ### Supporting Modules
 
-| Module               | Functionality                                                             | Technologies Used                              |
-|----------------------|---------------------------------------------------------------------------|-----------------------------------------------|
-| **Payment**         | - Multi-gateway Support<br>- Idempotent Transactions<br>- Refund Handling | Stripe SDK, Idempotency Keys, Circuit Breaker |
-| **MenuItem**        | - Dynamic Pricing<br>- Dietary Tagging<br>- Availability Scheduling       | Elasticsearch, Time-based Cache               |
-| **Notification**    | - Multi-channel (SMS/Email/Push)<br>- Template Engine<br>- Read Receipts | Twilio, SendGrid, Firebase Cloud Messaging    |
+| Module           | Functionality                                                             | Technologies Used                             |
+|------------------|---------------------------------------------------------------------------|-----------------------------------------------|
+| **Payment**      | - Multi-gateway Support<br>- Idempotent Transactions<br>- Refund Handling | Stripe SDK, Idempotency Keys, Circuit Breaker |
+| **MenuItem**     | - Dynamic Pricing<br>- Dietary Tagging<br>- Availability Scheduling       | Elasticsearch, Time-based Cache               |
+| **Notification** | - Multi-channel (SMS/Email/Push)<br>- Template Engine<br>- Read Receipts  | Twilio, SendGrid, Firebase Cloud Messaging    |
 
 ### Advanced Features
 
@@ -549,11 +587,6 @@ sequenceDiagram
     DeliveryService-->>-Customer: Tracking Link
 
 ```
-
-
-
-
-    
 
 ## **🔧 Core Functionality**
 
@@ -583,6 +616,7 @@ sequenceDiagram
 
 9. OrderStatus
    Tracks and updates the status of customer orders, such as pending, delivered, or cancelled.
+
 ## Database Schema (POJO Classes)
 
 | **Entity**        | **Attributes**                              |
@@ -593,7 +627,6 @@ sequenceDiagram
 | **Restaurant**    | registerNo, name, City, Area                |
 
 ---
-
 
 # Class Diagram
 
@@ -821,8 +854,8 @@ class OrderRepository {
 }
 ```
 
-
 ## Best Practices Followed
+
 - MVC Layering: Each layer has a single responsibility and adheres to open/closed principle.
 - Exception Handling: Extendable @ControllerAdvice class can be added for custom error management.
 - Validation: javax.validation annotations (future improvement) to enforce domain constraints.
@@ -830,6 +863,7 @@ class OrderRepository {
 - Lombok: Reduces boilerplate while maintaining readability.
 
 ## Future Scope
+
 - Add unit tests using JUnit + Mockito
 - API authentication using Spring Security or JWT
 - Integration with Kafka or RabbitMQ for event-driven order tracking
@@ -838,7 +872,6 @@ class OrderRepository {
 
 ---
 
-
 ## 🌐 Connect With Me
 
 <div align="center" style="margin: 20px 0;">
@@ -846,17 +879,17 @@ class OrderRepository {
   <a href="https://github.com/shreyamahalle" style="margin: 0 10px;">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" height="28"/>
   </a>
-  
+
   <!-- LinkedIn (with your corrected link) -->
   <a href="https://www.linkedin.com/in/shreya-mahalle-254657176/?originalSubdomain=in" style="margin: 0 10px;">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" height="28"/>
   </a>
-  
+
   <!-- Twitter -->
   <a href="https://twitter.com/shreyamahalle" style="margin: 0 10px;">
     <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" height="28"/>
   </a>
-  
+
   <!-- Email -->
   <a href="mailto:shreyamahalle8@example.com" style="margin: 0 10px;">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" height="28"/>
