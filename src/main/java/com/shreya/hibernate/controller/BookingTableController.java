@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/tableBookingManagement")
@@ -75,6 +76,12 @@ public class BookingTableController {
         } else {
             throw new IdNotFoundException("Booking not found with id: " + id);
         }
-
     }
+    @GetMapping("/bookingTable/pagination")
+    public Set<BookingTable> findBookingTable(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "5") int size) {
+        return bookingTableService.findBookingTable(page, size);
+    }
+
 }

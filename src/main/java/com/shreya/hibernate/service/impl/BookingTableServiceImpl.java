@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 @RequiredArgsConstructor
@@ -74,5 +75,9 @@ public class BookingTableServiceImpl implements BookingTableService {
             throw new IdNotFoundException("Booking not found with id: " + id);
         }
         return true;
+    }
+    public Set<BookingTable> findBookingTable(int page, int size){
+        bookingTableRepository.findBookingTable(page,size);
+        return Set.of();
     }
 }

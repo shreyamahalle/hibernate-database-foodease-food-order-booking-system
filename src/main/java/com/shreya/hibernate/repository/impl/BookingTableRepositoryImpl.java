@@ -8,6 +8,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -77,13 +78,16 @@ public class BookingTableRepositoryImpl implements BookingTableRepository {
     }
 
     @Override
-    public Set<BookingTable> findBookingTable(int page, int size){
-        Session session = sessionFactory.openSession();
-        return (Set<BookingTable>)  session.createQuery(("from BookingTable"))
-                .setFirstResult((page - 1) * size)
-                .setMaxResults(size)
-                .list().parallelStream().collect(Collectors.toSet());
-    }
+    public Set<BookingTable> findBookingTable(int page, int size) {
+        try (Session session = sessionFactory.openSession()) {
+            List<BookingTable> bookings = session.createQuery("FROM BookingTable", BookingTable.class)
+                    .setFirstResult((page - 1) * size)
+                    .setMaxResults(size)
+                    .list();
 
+            return new HashSet<>(bookings);
+        }
+    }
 }
+
 
