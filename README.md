@@ -50,6 +50,7 @@
 
 # **Hibernate Database Foodease Food Order Booking System**
 
+
 **Foodease** is a Java Hibernate Database Foodease Food Order Booking System. It allows customers to register, browse
 restaurants, place orders, and receive deliveries from nearby agents. The system is modular, scalable, and designed for
 real-world business needs.
