@@ -9,6 +9,8 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Repository("bookingTableRepository")
 public class BookingTableRepositoryImpl implements BookingTableRepository {
@@ -72,6 +74,15 @@ public class BookingTableRepositoryImpl implements BookingTableRepository {
         session.getTransaction().rollback();
         session.close();
         return false;
+    }
+
+    @Override
+    public Set<BookingTable> findBookingTable(int page, int size){
+        Session session = sessionFactory.openSession();
+        return (Set<BookingTable>)  session.createQuery(("from BookingTable"))
+                .setFirstResult((page - 1) * size)
+                .setMaxResults(size)
+                .list().parallelStream().collect(Collectors.toSet());
     }
 
 }
