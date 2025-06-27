@@ -6,7 +6,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.Cacheable;
 import java.sql.Time;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Data

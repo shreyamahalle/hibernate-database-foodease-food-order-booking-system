@@ -19,4 +19,4 @@ public interface BookingTableRepository {
 
     Set<BookingTable> findBookingTable(int page, int size);
 
-    }
+}

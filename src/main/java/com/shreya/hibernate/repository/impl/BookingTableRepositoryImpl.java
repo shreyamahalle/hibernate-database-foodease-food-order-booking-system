@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Repository("bookingTableRepository")
 public class BookingTableRepositoryImpl implements BookingTableRepository {
@@ -52,7 +51,7 @@ public class BookingTableRepositoryImpl implements BookingTableRepository {
     public boolean deleteBooking(long id) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        BookingTable tobeDeletedBookingTable = (BookingTable) session.load(BookingTable.class, id);
+        BookingTable tobeDeletedBookingTable = session.load(BookingTable.class, id);
         session.delete(tobeDeletedBookingTable);
         session.getTransaction().commit();
         session.flush();

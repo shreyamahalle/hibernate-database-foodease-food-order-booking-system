@@ -77,6 +77,7 @@ public class BookingTableController {
             throw new IdNotFoundException("Booking not found with id: " + id);
         }
     }
+
     @GetMapping("/bookingTable/pagination")
     public Set<BookingTable> findBookingTable(
             @RequestParam(defaultValue = "1") int page,

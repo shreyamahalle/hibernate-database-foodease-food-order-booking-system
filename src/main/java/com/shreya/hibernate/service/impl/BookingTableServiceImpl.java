@@ -76,8 +76,9 @@ public class BookingTableServiceImpl implements BookingTableService {
         }
         return true;
     }
-    public Set<BookingTable> findBookingTable(int page, int size){
-        bookingTableRepository.findBookingTable(page,size);
+
+    public Set<BookingTable> findBookingTable(int page, int size) {
+        bookingTableRepository.findBookingTable(page, size);
         return Set.of();
     }
 }
